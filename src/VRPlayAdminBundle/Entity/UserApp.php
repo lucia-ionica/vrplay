@@ -18,27 +18,27 @@ class UserApp
   protected $id;
 
   /**
-   * @ORM\Column(type="boolean")
+   * @ORM\Column(type="boolean", nullable=true)
    */
   protected $is_downloaded;
 
   /**
-   * @ORM\Column(type="boolean")
+   * @ORM\Column(type="boolean", nullable=true)
    */
   protected $is_purchased;
 
   /**
-   * @ORM\Column(type="boolean")
+   * @ORM\Column(type="boolean", nullable=true)
    */
   protected $in_wishlist;
 
   /**
-   * @ORM\Column(type="boolean")
+   * @ORM\Column(type="boolean", nullable=true)
    */
   protected $is_liked;
 
   /**
-   * @ORM\Column(type="boolean")
+   * @ORM\Column(type="boolean", nullable=true)
    */
   protected $is_disliked;
 

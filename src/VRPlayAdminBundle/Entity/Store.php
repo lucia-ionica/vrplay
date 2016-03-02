@@ -26,37 +26,37 @@ class Store
   protected $name;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $profile_picture;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $cover_image;
 
   /**
-   * @ORM\Column(type="text", length=1000)
+   * @ORM\Column(type="text", length=1000, nullable=true)
    */
   protected $description;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $website_page;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $twitter_page;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $fb_page;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $google_plus_page;
 
