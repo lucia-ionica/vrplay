@@ -1,3 +1,15 @@
+vr_play_admin_category:
+    resource: "@VRPlayAdminBundle/Controller/CategoryController.php"
+    type:     annotation
+
+vr_play_admin_genre:
+    resource: "@VRPlayAdminBundle/Controller/GenreController.php"
+    type:     annotation
+
+vr_play_admin_genre:
+    resource: "@VRPlayAdminBundle/Controller/GenreController.php"
+    type:     annotation
+
 vr_custom_user:
     resource: "@VRCustomUserBundle/Controller/"
     type:     annotation
