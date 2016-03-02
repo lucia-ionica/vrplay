@@ -1,0 +1,15 @@
+vr_play_audit:
+    resource: "@VRPlayAuditBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+vr_play:
+    resource: "@VRPlayBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+vr_play_admin:
+    resource: "@VRPlayAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
