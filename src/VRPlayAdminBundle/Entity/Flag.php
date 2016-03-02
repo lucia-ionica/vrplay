@@ -141,4 +141,72 @@ class Flag
     {
         return $this->flagged_apps;
     }
+
+    /**
+     * Add userFlaggedComment
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment
+     *
+     * @return Flag
+     */
+    public function addUserFlaggedComment(\VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment)
+    {
+        $this->user_flagged_comments[] = $userFlaggedComment;
+
+        return $this;
+    }
+
+    /**
+     * Remove userFlaggedComment
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment
+     */
+    public function removeUserFlaggedComment(\VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment)
+    {
+        $this->user_flagged_comments->removeElement($userFlaggedComment);
+    }
+
+    /**
+     * Get userFlaggedComments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserFlaggedComments()
+    {
+        return $this->user_flagged_comments;
+    }
+
+    /**
+     * Add userFlaggedApp
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp
+     *
+     * @return Flag
+     */
+    public function addUserFlaggedApp(\VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp)
+    {
+        $this->user_flagged_apps[] = $userFlaggedApp;
+
+        return $this;
+    }
+
+    /**
+     * Remove userFlaggedApp
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp
+     */
+    public function removeUserFlaggedApp(\VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp)
+    {
+        $this->user_flagged_apps->removeElement($userFlaggedApp);
+    }
+
+    /**
+     * Get userFlaggedApps
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserFlaggedApps()
+    {
+        return $this->user_flagged_apps;
+    }
 }

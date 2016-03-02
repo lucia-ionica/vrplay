@@ -26,58 +26,58 @@ class App
   protected $name;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $app_thumb;
 
   /**
-   * @ORM\Column(type="text", length=1000)
+   * @ORM\Column(type="text", length=1000, nullable=true)
    */
   protected $description;
 
   /**
-   * @ORM\Column(type="decimal", scale=2)
+   * @ORM\Column(type="decimal", scale=2, nullable=true)
    * @Assert\Currency
    */
   protected $price;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $screenshot1;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $screenshot2;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $screenshot3;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $screenshot4;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $screenshot5;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $screenshot6;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $screenshot7;
 
   /**
-   * @ORM\Column(type="string", length=255)
+   * @ORM\Column(type="string", length=255, nullable=true)
    */
   protected $video1;
 
@@ -681,5 +681,39 @@ class App
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * Add userFlaggedApp
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp
+     *
+     * @return App
+     */
+    public function addUserFlaggedApp(\VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp)
+    {
+        $this->user_flagged_apps[] = $userFlaggedApp;
+
+        return $this;
+    }
+
+    /**
+     * Remove userFlaggedApp
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp
+     */
+    public function removeUserFlaggedApp(\VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp)
+    {
+        $this->user_flagged_apps->removeElement($userFlaggedApp);
+    }
+
+    /**
+     * Get userFlaggedApps
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserFlaggedApps()
+    {
+        return $this->user_flagged_apps;
     }
 }

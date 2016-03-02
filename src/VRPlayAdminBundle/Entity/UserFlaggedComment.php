@@ -35,4 +35,86 @@ class UserFlaggedComment
    */
   protected $flag;
 
+
+    /**
+     * Get id
+     *
+     * @return guid
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \VRPlayAdminBundle\Entity\User $user
+     *
+     * @return UserFlaggedComment
+     */
+    public function setUser(\VRPlayAdminBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \VRPlayAdminBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param \VRPlayAdminBundle\Entity\Comment $comment
+     *
+     * @return UserFlaggedComment
+     */
+    public function setComment(\VRPlayAdminBundle\Entity\Comment $comment = null)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return \VRPlayAdminBundle\Entity\Comment
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set flag
+     *
+     * @param \VRPlayAdminBundle\Entity\Flag $flag
+     *
+     * @return UserFlaggedComment
+     */
+    public function setFlag(\VRPlayAdminBundle\Entity\Flag $flag = null)
+    {
+        $this->flag = $flag;
+
+        return $this;
+    }
+
+    /**
+     * Get flag
+     *
+     * @return \VRPlayAdminBundle\Entity\Flag
+     */
+    public function getFlag()
+    {
+        return $this->flag;
+    }
 }

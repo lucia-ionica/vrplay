@@ -263,4 +263,38 @@ class Comment
     {
         return $this->parent;
     }
+
+    /**
+     * Add userFlaggedComment
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment
+     *
+     * @return Comment
+     */
+    public function addUserFlaggedComment(\VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment)
+    {
+        $this->user_flagged_comments[] = $userFlaggedComment;
+
+        return $this;
+    }
+
+    /**
+     * Remove userFlaggedComment
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment
+     */
+    public function removeUserFlaggedComment(\VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment)
+    {
+        $this->user_flagged_comments->removeElement($userFlaggedComment);
+    }
+
+    /**
+     * Get userFlaggedComments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserFlaggedComments()
+    {
+        return $this->user_flagged_comments;
+    }
 }

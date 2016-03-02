@@ -35,4 +35,86 @@ class UserFlaggedApp
    */
   protected $flag;
 
+
+    /**
+     * Get id
+     *
+     * @return guid
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \VRPlayAdminBundle\Entity\User $user
+     *
+     * @return UserFlaggedApp
+     */
+    public function setUser(\VRPlayAdminBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \VRPlayAdminBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set app
+     *
+     * @param \VRPlayAdminBundle\Entity\App $app
+     *
+     * @return UserFlaggedApp
+     */
+    public function setApp(\VRPlayAdminBundle\Entity\App $app = null)
+    {
+        $this->app = $app;
+
+        return $this;
+    }
+
+    /**
+     * Get app
+     *
+     * @return \VRPlayAdminBundle\Entity\App
+     */
+    public function getApp()
+    {
+        return $this->app;
+    }
+
+    /**
+     * Set flag
+     *
+     * @param \VRPlayAdminBundle\Entity\Flag $flag
+     *
+     * @return UserFlaggedApp
+     */
+    public function setFlag(\VRPlayAdminBundle\Entity\Flag $flag = null)
+    {
+        $this->flag = $flag;
+
+        return $this;
+    }
+
+    /**
+     * Get flag
+     *
+     * @return \VRPlayAdminBundle\Entity\Flag
+     */
+    public function getFlag()
+    {
+        return $this->flag;
+    }
 }

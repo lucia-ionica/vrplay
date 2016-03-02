@@ -17,36 +17,36 @@ class User extends BaseUser
      */
     protected $id;
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     protected $first_name;
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     protected $last_name;
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=15, nullable=true)
      */
     protected $phone;
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $profile_picture;
     /**
-     * @ORM\Column(type="string", length=25)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     protected $gender;
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     protected $birthday;
     /**
-     * @ORM\Column(type="string", length=150)
+     * @ORM\Column(type="string", length=150, nullable=true)
      */
     protected $country;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="json_array", nullable=true)
      */
     protected $settings;
 
@@ -94,19 +94,6 @@ class User extends BaseUser
         // your own logic
     }
 
-    /**
-     * Set id
-     *
-     * @param integer $id
-     *
-     * @return User
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
 
     /**
      * Set firstName
@@ -277,6 +264,30 @@ class User extends BaseUser
     }
 
     /**
+     * Set settings
+     *
+     * @param array $settings
+     *
+     * @return User
+     */
+    public function setSettings($settings)
+    {
+        $this->settings = $settings;
+
+        return $this;
+    }
+
+    /**
+     * Get settings
+     *
+     * @return array
+     */
+    public function getSettings()
+    {
+        return $this->settings;
+    }
+
+    /**
      * Add store
      *
      * @param \VRPlayAdminBundle\Entity\Store $store
@@ -437,26 +448,70 @@ class User extends BaseUser
     }
 
     /**
-     * Set settings
+     * Add userFlaggedComment
      *
-     * @param \json $settings
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment
      *
      * @return User
      */
-    public function setSettings(\json $settings)
+    public function addUserFlaggedComment(\VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment)
     {
-        $this->settings = $settings;
+        $this->user_flagged_comments[] = $userFlaggedComment;
 
         return $this;
     }
 
     /**
-     * Get settings
+     * Remove userFlaggedComment
      *
-     * @return \json
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment
      */
-    public function getSettings()
+    public function removeUserFlaggedComment(\VRPlayAdminBundle\Entity\UserFlaggedComment $userFlaggedComment)
     {
-        return $this->settings;
+        $this->user_flagged_comments->removeElement($userFlaggedComment);
+    }
+
+    /**
+     * Get userFlaggedComments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserFlaggedComments()
+    {
+        return $this->user_flagged_comments;
+    }
+
+    /**
+     * Add userFlaggedApp
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp
+     *
+     * @return User
+     */
+    public function addUserFlaggedApp(\VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp)
+    {
+        $this->user_flagged_apps[] = $userFlaggedApp;
+
+        return $this;
+    }
+
+    /**
+     * Remove userFlaggedApp
+     *
+     * @param \VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp
+     */
+    public function removeUserFlaggedApp(\VRPlayAdminBundle\Entity\UserFlaggedApp $userFlaggedApp)
+    {
+        $this->user_flagged_apps->removeElement($userFlaggedApp);
+    }
+
+    /**
+     * Get userFlaggedApps
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserFlaggedApps()
+    {
+        return $this->user_flagged_apps;
     }
 }

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new VRPlayAdminBundle\VRPlayAdminBundle(),
             new VRPlayBundle\VRPlayBundle(),
             new VRPlayAuditBundle\VRPlayAuditBundle(),
+            new VRCustomUserBundle\VRCustomUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

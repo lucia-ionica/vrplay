@@ -1,7 +1,12 @@
+vr_custom_user:
+    resource: "@VRCustomUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 vr_play_audit:
     resource: "@VRPlayAuditBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /logs
 
 vr_play:
     resource: "@VRPlayBundle/Controller/"
@@ -11,5 +16,7 @@ vr_play:
 vr_play_admin:
     resource: "@VRPlayAdminBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /admin
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
